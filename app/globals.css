@@ -1,33 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html{
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.ibm-plex-sans-arabic-thin {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 100;
+    font-style: normal;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  .ibm-plex-sans-arabic-extralight {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 200;
+    font-style: normal;
   }
-}
+  
+  .ibm-plex-sans-arabic-light {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .ibm-plex-sans-arabic-regular {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .ibm-plex-sans-arabic-medium {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .ibm-plex-sans-arabic-semibold {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .ibm-plex-sans-arabic-bold {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+  @layer base{
+    body{
+        @apply ibm-plex-sans-arabic-medium bg-[#f5f4f4]
+    }
+    .nav-icon{
+        @apply text-[22px] font-normal cursor-pointer
+    }
+    .nav-link{
+        @apply text-[23px] ibm-plex-sans-arabic-semibold 
+    }
+    .footer-link{
+      @apply text-gray-500 text-[18px]
+    }
+    .patient-name{
+      @apply w-[100px] h-[50px] text-slate-700 grid place-items-center rounded-[5px] bg-[#eee] text-[18px] font-semibold cursor-pointer
+    }
+    .form-txtarea::placeholder{
+
+      @apply text-[18px] ibm-plex-sans-arabic-regular text-gray-500 font-semibold
+    }
+    .form-inp::placeholder{
+      @apply font-semibold text-gray-500 text-[18px]
+    }
+    .form-inp2::placeholder{
+      @apply  text-gray-500 text-[17px]
+    }
+  }
+
+  .drt{
+    direction: rtl;
+  }
+
+
