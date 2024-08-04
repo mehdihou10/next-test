@@ -1,6 +1,6 @@
 "use client";
 
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import { useRouter } from 'next/navigation';
 import { FaRegCalendarAlt,FaRegHeart  } from "react-icons/fa";
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -46,10 +46,20 @@ const Card = ()=>{
 
 const Appointment = () => {
 
-  const [width,setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
+  useEffect(() => {
+    
+    const handleResize = () => setWidth(window.innerWidth);
 
-  window.onresize = (e)=>setWidth(e.target.innerWidth)
+    
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
 
   return (
